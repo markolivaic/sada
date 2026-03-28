@@ -1,10 +1,17 @@
 "use client";
 
-import { useState } from "react";
-import { Sun, TreePine, Coffee, Armchair, MapPin, Clock } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Sun, TreePine, Coffee, Armchair, Clock } from "lucide-react";
 
 type LightPref = "sun" | "shade";
 type SeatPref = "cafe" | "bench";
+
+const LOADING_MESSAGES = [
+  "Reading the shadows...",
+  "Calculating sun angle...",
+  "Scanning Zagreb...",
+  "Finding your spot...",
+];
 
 interface SadaResult {
   destination: { lat: number; lng: number };
@@ -12,11 +19,35 @@ interface SadaResult {
   narration: string;
 }
 
-export default function SadaUI() {
+export default function SadaUI({ onResult }: { onResult?: (data: SadaResult) => void }) {
   const [light, setLight] = useState<LightPref>("sun");
   const [seat, setSeat] = useState<SeatPref>("cafe");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<SadaResult | null>(null);
+  const [excluded, setExcluded] = useState<string[]>([]);
+  const [loadingIndex, setLoadingIndex] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    setExcluded([]);
+  }, [light, seat]);
+
+  useEffect(() => {
+    if (loading) {
+      setLoadingIndex(0);
+      intervalRef.current = setInterval(() => {
+        setLoadingIndex(prev =>
+          prev < LOADING_MESSAGES.length - 1 ? prev + 1 : prev
+        );
+      }, 900);
+    } else {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      setLoadingIndex(0);
+    }
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [loading]);
 
   const handleSada = async () => {
     setLoading(true);
@@ -26,10 +57,12 @@ export default function SadaUI() {
       const res = await fetch("/api/sada", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ light, seat }),
+        body: JSON.stringify({ light, seat, exclude: excluded }),
       });
       const data: SadaResult = await res.json();
       setResult(data);
+      onResult?.(data);
+      setExcluded(prev => [...prev, `${data.destination.lat},${data.destination.lng}`]);
     } catch {
       // TODO: surface error to user
     } finally {
@@ -71,38 +104,40 @@ export default function SadaUI() {
       </p>
 
       {/* CTA */}
-      <button
-        onClick={handleSada}
-        disabled={loading}
-        className="mt-5 w-full rounded-2xl bg-neutral-900 py-4 text-xl font-bold text-white transition-transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60"
-      >
-        {loading ? "Calculating…" : "SADA."}
-      </button>
-
-      {/* Loading skeleton */}
-      {loading && (
-        <div className="mt-4 animate-pulse space-y-3 rounded-2xl bg-neutral-100 p-5">
-          <div className="h-4 w-3/4 rounded bg-neutral-300" />
-          <div className="h-4 w-1/2 rounded bg-neutral-300" />
-          <p className="text-sm text-neutral-400">Calculating physics…</p>
+      {loading ? (
+        <div className="mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-neutral-900 py-4">
+          <span className="h-2 w-2 rounded-full bg-white/60 animate-pulse" />
+          <span className="text-sm italic text-white/60">
+            {LOADING_MESSAGES[loadingIndex]}
+          </span>
         </div>
+      ) : (
+        <button
+          onClick={handleSada}
+          className="mt-5 w-full rounded-2xl bg-neutral-900 py-4 text-xl font-bold text-white transition-transform hover:scale-[1.02] active:scale-[0.98]"
+        >
+          SADA.
+        </button>
       )}
 
       {/* Result card */}
       {result && !loading && (
-        <div className="mt-4 space-y-3 rounded-2xl bg-neutral-50 border border-neutral-200 p-5">
-          <div className="flex items-center gap-2 text-neutral-900 font-semibold">
-            <MapPin className="h-5 w-5 text-rose-500" />
-            <span>
-              {result.destination.lat.toFixed(4)}, {result.destination.lng.toFixed(4)}
+        <div className="mt-4 animate-[slideUp_0.4s_ease-out] rounded-2xl bg-black/80 backdrop-blur-xl p-4 space-y-3">
+          <div className="flex items-center justify-between">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-sm text-white">
+              <Clock className="h-3.5 w-3.5" />
+              {result.walkingDuration} walk
             </span>
+            <button
+              onClick={handleSada}
+              className="text-sm text-white/60 hover:text-white transition-colors"
+            >
+              🎲 Try another
+            </button>
           </div>
-          <div className="flex items-center gap-2 text-sm text-neutral-500">
-            <Clock className="h-4 w-4" />
-            <span>{result.walkingDuration} walk</span>
-          </div>
-          <p className="text-neutral-700 leading-relaxed italic">
-            &ldquo;{result.narration}&rdquo;
+
+          <p className="text-white text-base leading-relaxed">
+            {result.narration}
           </p>
         </div>
       )}
