@@ -1,137 +1,77 @@
 import { NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
 
-function deriveCategory(tags: Record<string, string>): string | null {
-  if (tags?.amenity === "cafe") return "cafe";
-  if (tags?.amenity === "bench") return "bench";
-  if (tags?.amenity === "drinking_water") return "fountain";
-  if (tags?.tourism === "viewpoint") return "viewpoint";
-  if (tags?.leisure === "park") return "park";
-  if (tags?.place === "square") return "square";
-  return null;
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
+interface PoiDetailRequest {
+  shadow: {
+    currentState: "sun" | "shade";
+    sunAltitudeDeg: number;
+  };
+  stableForMinutes?: number;
+  userLocation?: { lat: number; lng: number };
+  distanceMeters?: number;
+  walkingMinutes?: number;
+  poiName?: string;
+  poiCategory?: string;
 }
 
 export async function POST(
   req: Request,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
+  const body: PoiDetailRequest = await req.json();
 
-  let body: {
-    shadow: { currentState: "sun" | "shade"; sunAltitudeDeg: number };
-    userLocation?: { lat: number; lng: number };
-    distanceMeters: number;
-    walkingMinutes: number;
-  };
-  try {
-    body = await req.json();
-  } catch {
-    return NextResponse.json(
-      { error: "Invalid JSON body" },
-      { status: 400 }
-    );
-  }
+  const inSun = body.shadow.currentState === "sun";
+  const distance = body.distanceMeters ?? 0;
+  const walkMin = body.walkingMinutes ?? Math.round(distance / 80);
+  const stableMin = body.stableForMinutes ?? 30;
+  const name = body.poiName ?? "This spot";
+  const category = body.poiCategory ?? "spot";
 
-  const { shadow, distanceMeters, walkingMinutes } = body;
+  const stableLabel =
+    stableMin >= 240 ? "3+ hours"
+    : stableMin >= 60 ? `${Math.floor(stableMin / 60)}h ${stableMin % 60 ? `${stableMin % 60}min` : ""}`
+    : `${stableMin} min`;
 
-  if (
-    !shadow ||
-    !shadow.currentState ||
-    shadow.sunAltitudeDeg === undefined ||
-    distanceMeters === undefined ||
-    walkingMinutes === undefined
-  ) {
-    return NextResponse.json(
-      { error: "Missing required fields: shadow, distanceMeters, walkingMinutes" },
-      { status: 400 }
-    );
-  }
-
-  let name = "this spot";
-  let category = "location";
-
-  const makeFallback = (n: string) =>
-    shadow.currentState === "sun"
-      ? `${n} is catching full sun right now — ${walkingMinutes} min walk from you.`
-      : `${n} is shaded right now — ${walkingMinutes} min walk if you want to cool down.`;
+  let description: string;
 
   try {
-    const osmId = id.replace("osm-", "");
+    const prompt = `You are Sada, a confident local friend who knows Zagreb intimately. Write ONE short sentence (max 20 words) about "${name}" (a ${category} in Zagreb).
 
-    if (!/^\d+$/.test(osmId)) {
-      return NextResponse.json(
-        { error: "Invalid OSM ID format" },
-        { status: 400 }
-      );
-    }
-    const query = `[out:json];node(${osmId});out body;`;
+Current conditions:
+- It is currently in the ${inSun ? "sun" : "shade"}
+- Sun altitude: ${body.shadow.sunAltitudeDeg.toFixed(0)}°
+- Will stay in ${inSun ? "sun" : "shade"} for ~${stableLabel}
+- ${walkMin} min walk away
 
-    try {
-      const overpassRes = await fetch(
-        "https://overpass-api.de/api/interpreter",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: `data=${encodeURIComponent(query)}`,
-        }
-      );
-      const overpassData = await overpassRes.json();
-      const el = overpassData.elements?.[0];
-      if (el) {
-        name = el.tags?.name ?? "this spot";
-        category = deriveCategory(el.tags ?? {}) ?? "location";
-      }
-    } catch (e) {
-      console.error("[poi-detail] Overpass fetch failed, using fallbacks:", e);
-    }
+Rules:
+- Sound like a friend texting, not a tour guide
+- Mention the sun/shade naturally
+- Be specific to the place if you know it, otherwise be poetic about the vibe
+- No emojis, no exclamation marks, no "Hey" or "Check out"
+- Just one confident sentence`;
 
-    const hour = parseInt(
-      new Date().toLocaleString("en-US", {
-        timeZone: "Europe/Zagreb",
-        hour: "numeric",
-        hour12: false,
-      })
-    );
-    const timeOfDay =
-      hour < 12 ? "morning" : hour < 17 ? "afternoon" : "evening";
-
-    const fallbackDescription = makeFallback(name);
-
-    let description = fallbackDescription;
-    try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-      const response = await ai.models.generateContent({
-        model: "gemini-2.0-flash",
-        contents: `You are Sada, a hyperlocal Zagreb guide. A user just tapped on ${name} (a ${category}) on the map. Here is the real-time context:
-- Shadow state: ${shadow.currentState} (sun altitude: ${shadow.sunAltitudeDeg}°)
-- Walking distance: ${distanceMeters}m (about ${walkingMinutes} min)
-- Time of day: ${timeOfDay} in Zagreb
-
-Write exactly 2 sentences. Sentence 1: describe the current condition of this specific spot right now — reference whether it is in sun or shade and what that means for sitting here at this time of day. Sentence 2: give one sharp local detail about this type of place in Zagreb at this time of day, and whether the walk is worth it right now.
-
-Rules: No greetings. No emojis. Start with a verb. Never say 'perfect spot' or 'great choice'.`,
-      });
-      description = response.text || fallbackDescription;
-    } catch (e) {
-      console.error("[poi-detail] Gemini generation failed:", e);
-    }
-
-    return NextResponse.json({
-      id,
-      description,
-      shadow: {
-        currentState: shadow.currentState,
-        sunAltitudeDeg: shadow.sunAltitudeDeg,
-      },
-      walkingMinutes,
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-flash",
+      contents: prompt,
     });
-  } catch (error) {
-    console.error("[poi-detail] Unexpected error:", error);
-    return NextResponse.json({
-      id,
-      description: makeFallback(name),
-      shadow,
-      walkingMinutes,
-    });
+
+    description = response.text?.trim() ?? "";
+
+    if (!description) throw new Error("Empty response");
+  } catch (err) {
+    console.error("[poi-detail] Gemini failed:", err);
+    description = inSun
+      ? `${name} is catching full sun right now — ${stableLabel} of warmth left.`
+      : `${name} is tucked in the shade — cool and steady for another ${stableLabel}.`;
   }
+
+  return NextResponse.json({
+    id,
+    description,
+    shadow: body.shadow,
+    walkingMinutes: walkMin,
+  });
 }

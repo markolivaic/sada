@@ -30,6 +30,36 @@ function deriveCategory(tags: Record<string, string>): string | null {
   return null;
 }
 
+async function getWalkingRoute(
+  origin: { lat: number; lng: number },
+  dest: { lat: number; lng: number },
+) {
+  const dirUrl =
+    `https://maps.googleapis.com/maps/api/directions/json` +
+    `?origin=${origin.lat},${origin.lng}` +
+    `&destination=${dest.lat},${dest.lng}` +
+    `&mode=walking` +
+    `&key=${process.env.GOOGLE_MAPS_API_KEY}`;
+
+  const dirRes = await fetch(dirUrl);
+  const dirData = await dirRes.json();
+
+  const walkingDuration: string =
+    dirData.routes?.[0]?.legs?.[0]?.duration?.text ?? "5 mins";
+  const durationSeconds: number =
+    dirData.routes?.[0]?.legs?.[0]?.duration?.value ?? 300;
+  const distanceMeters: number =
+    dirData.routes?.[0]?.legs?.[0]?.distance?.value ?? 400;
+  const encodedPolyline: string =
+    dirData.routes?.[0]?.overview_polyline?.points ?? "";
+
+  const coordinates: [number, number][] = encodedPolyline
+    ? polyline.decode(encodedPolyline).map(([lat, lng]) => [lng, lat])
+    : [[origin.lng, origin.lat], [dest.lng, dest.lat]];
+
+  return { coordinates, distanceMeters, durationMinutes: Math.round(durationSeconds / 60), walkingDuration };
+}
+
 export async function POST(req: Request) {
   const body = await req.json();
   const light: "sun" | "shade" = body.light;
@@ -37,8 +67,37 @@ export async function POST(req: Request) {
   const exclude: string[] = body.exclude ?? [];
   const userLocation = body.userLocation ?? { lat: 45.8130, lng: 15.9779 };
 
+  // If the client already picked a destination (using accurate building-shadow data),
+  // skip Overpass + shadow filtering and just compute the walking route.
+  if (body.destination) {
+    const dest = body.destination;
+    try {
+      const route = await getWalkingRoute(userLocation, { lat: dest.lat, lng: dest.lng });
+      return NextResponse.json({
+        destination: dest,
+        route: {
+          coordinates: route.coordinates,
+          distanceMeters: route.distanceMeters,
+          durationMinutes: route.durationMinutes,
+        },
+        walkingDuration: route.walkingDuration,
+      });
+    } catch (error) {
+      console.error("[sada] Route fetch failed for client-selected destination:", error);
+      return NextResponse.json({
+        destination: dest,
+        route: {
+          coordinates: [[userLocation.lng, userLocation.lat], [dest.lng, dest.lat]],
+          distanceMeters: 200,
+          durationMinutes: 3,
+        },
+        walkingDuration: "3 mins",
+      });
+    }
+  }
+
+  // Server-side POI discovery fallback (Overpass → shadow filter → directions)
   try {
-    // Step 1 — Overpass query
     const queryFn = CATEGORY_QUERIES[seat] ?? CATEGORY_QUERIES["cafe"];
     const amenityQuery = queryFn(userLocation.lat, userLocation.lng);
     const overpassQuery = `[out:json];${amenityQuery}out center body;`;
@@ -55,7 +114,6 @@ export async function POST(req: Request) {
       throw new Error("No POIs returned from Overpass");
     }
 
-    // Step 2 — Filter exclusions
     const filtered = elements.filter(
       (el: { lat: number; lon: number; center?: { lat: number; lon: number } }) => {
         const elLat = el.lat ?? el.center?.lat;
@@ -65,7 +123,6 @@ export async function POST(req: Request) {
     );
     const afterExclude = filtered.length > 0 ? filtered : elements;
 
-    // Step 3 — Shadow preference filter
     const shadowFiltered = afterExclude.filter(
       (el: { lat: number; lon: number }) => {
         const state = getSunState(el.lat, el.lon);
@@ -74,36 +131,12 @@ export async function POST(req: Request) {
     );
     const pool = shadowFiltered.length > 0 ? shadowFiltered : afterExclude;
 
-    // Step 4 — Google Directions (full route)
     const chosen = pool[Math.floor(Math.random() * pool.length)];
-    const dirUrl =
-      `https://maps.googleapis.com/maps/api/directions/json` +
-      `?origin=${userLocation.lat},${userLocation.lng}` +
-      `&destination=${chosen.lat},${chosen.lon}` +
-      `&mode=walking` +
-      `&key=${process.env.GOOGLE_MAPS_API_KEY}`;
+    const route = await getWalkingRoute(userLocation, { lat: chosen.lat, lng: chosen.lon });
 
-    const dirRes = await fetch(dirUrl);
-    const dirData = await dirRes.json();
-
-    const walkingDuration: string =
-      dirData.routes?.[0]?.legs?.[0]?.duration?.text ?? "5 mins";
-    const durationSeconds: number =
-      dirData.routes?.[0]?.legs?.[0]?.duration?.value ?? 300;
-    const distanceMeters: number =
-      dirData.routes?.[0]?.legs?.[0]?.distance?.value ?? 400;
-    const encodedPolyline: string =
-      dirData.routes?.[0]?.overview_polyline?.points ?? "";
-
-    const coordinates: [number, number][] = encodedPolyline
-      ? polyline.decode(encodedPolyline).map(([lat, lng]) => [lng, lat])
-      : [[userLocation.lng, userLocation.lat], [chosen.lon, chosen.lat]];
-
-    // Step 5 — Shadow metadata for chosen spot (consumed by narration endpoint)
     const shadow = getShadowMetadata(chosen.lat, chosen.lon);
     void shadow;
 
-    // Step 6 — Response
     const derivedCategory = deriveCategory(chosen.tags ?? {}) ?? seat;
 
     return NextResponse.json({
@@ -115,14 +148,13 @@ export async function POST(req: Request) {
         category: derivedCategory,
       },
       route: {
-        coordinates,
-        distanceMeters,
-        durationMinutes: Math.round(durationSeconds / 60),
+        coordinates: route.coordinates,
+        distanceMeters: route.distanceMeters,
+        durationMinutes: route.durationMinutes,
       },
-      walkingDuration,
+      walkingDuration: route.walkingDuration,
     });
   } catch (error) {
-    // Step 9 — Error handling
     console.error(error);
 
     return NextResponse.json({
