@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@google/genai": "^1.46.0",
+    "@mapbox/polyline": "^1.2.1",
     "@turf/turf": "^7.3.4",
     "lucide-react": "^1.7.0",
     "mapbox-gl": "^3.20.0",
@@ -22,10 +23,12 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/geojson": "^7946.0.16",
+    "@types/mapbox__polyline": "^1.0.5",
     "@types/mapbox-gl": "^3.4.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/suncalc": "^1.9.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
     "tailwindcss": "^4",
