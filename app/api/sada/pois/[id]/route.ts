@@ -67,19 +67,29 @@ export async function POST(
     const query = `[out:json];node(${osmId});out body;`;
 
     try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 8000);
       const overpassRes = await fetch(
         "https://overpass-api.de/api/interpreter",
         {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: `data=${encodeURIComponent(query)}`,
+          signal: controller.signal,
+          cache: "no-store",
         }
       );
-      const overpassData = await overpassRes.json();
-      const el = overpassData.elements?.[0];
-      if (el) {
-        name = el.tags?.name ?? "this spot";
-        category = deriveCategory(el.tags ?? {}) ?? "location";
+      clearTimeout(timeout);
+      const contentType = overpassRes.headers.get("content-type") ?? "";
+      if (overpassRes.ok && contentType.includes("json")) {
+        const overpassData = await overpassRes.json();
+        const el = overpassData.elements?.[0];
+        if (el) {
+          name = el.tags?.name ?? "this spot";
+          category = deriveCategory(el.tags ?? {}) ?? "location";
+        }
+      } else if (!overpassRes.ok) {
+        console.error(`[poi-detail] Overpass returned HTTP ${overpassRes.status}`);
       }
     } catch (e) {
       console.error("[poi-detail] Overpass fetch failed, using fallbacks:", e);

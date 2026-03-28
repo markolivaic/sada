@@ -48,6 +48,29 @@ Pipeline:
 
 Error handling: try/catch always returns status 200 with `{ locations: [], count: 0, error: "..." }` on failure. Logs success count and errors to server console.
 
+#### `app/api/sada/pois/[id]/route.ts` — POI Detail AI Narration
+
+Dynamic route POST endpoint that generates a Gemini AI description for a specific POI. The `[id]` segment is the OSM ID (e.g. `osm-930267649`). Receives real-time shadow data from the client and combines it with POI metadata fetched from Overpass to produce a contextual 2-sentence narration.
+
+Pipeline:
+1. **Validate request** — Parses and validates the JSON body (`shadow`, `distanceMeters`, `walkingMinutes`). Returns 400 on invalid JSON, missing fields, or non-numeric OSM ID (prevents Overpass QL injection).
+2. **Fetch POI from Overpass** — Strips the `osm-` prefix, queries Overpass by node ID with an 8-second abort timeout. Checks response content-type to avoid parsing XML error pages as JSON. Extracts `name` and derives `category` via `deriveCategory()`. Falls back to `"this spot"` / `"location"` if Overpass is unavailable.
+3. **Zagreb time-of-day** — Computes morning/afternoon/evening using `Europe/Zagreb` timezone.
+4. **Gemini 2.0 Flash narration** — Sends a carefully tuned prompt that produces exactly 2 sentences: current sun/shade condition at the spot, and one sharp local Zagreb detail. Falls back to a simple sun/shade description if Gemini fails.
+5. **Return JSON (always 200)** — `{ id, description, shadow: { currentState, sunAltitudeDeg }, walkingMinutes }`.
+
+**Request body:**
+```json
+{
+  "shadow": { "currentState": "sun"|"shade", "sunAltitudeDeg": 35 },
+  "userLocation": { "lat": 45.813, "lng": 15.978 },
+  "distanceMeters": 200,
+  "walkingMinutes": 3
+}
+```
+
+**Error handling:** Input validation returns 400 with descriptive error messages. All downstream failures (Overpass timeout/504/XML, Gemini quota/error) are caught individually and fall back gracefully. The outer catch block ensures a 200 response with fallback description is always returned.
+
 #### `app/map/page.tsx` — State Lifting
 
 - Added `destination` state (`{ lat, lng } | null`) at the page level.
@@ -123,9 +146,8 @@ Pure server-side utility module (no React, no Next.js dependencies) that wraps S
 | Directions | Google Directions API | -- |
 | Sun position | SunCalc | 1.9.0 |
 | Geospatial | @turf/turf | 7.3.4 |
+| AI | Google Gemini 2.0 Flash | @google/genai 1.46.0 |
 | Fonts | Geist Sans + Geist Mono | via next/font |
-
-**Available but not used in this route:** `@google/genai` (Gemini narration is handled by a separate endpoint).
 
 ---
 
@@ -141,7 +163,7 @@ GEMINI_API_KEY=             # Google Gemini API key (server-side, used by narrat
 
 ### Known Limitations (MVP Scope)
 
-- **Narration not wired in UI:** `SadaUI.tsx` still references `narration` in its result type and renders it, but the main API route no longer returns it. The narration endpoint is being built separately.
+- **Narration not wired in UI:** The narration endpoint (`/api/sada/pois/[id]`) is built and functional, but `SadaUI.tsx` does not call it yet. The UI still references `narration` in its result type but the main route no longer returns it.
 - **MapComponent uses demo route:** The map renders a hardcoded `DEMO_ROUTE` instead of the API's decoded `route.coordinates`. Needs to be wired up.
 - **No error UI:** Fetch failures are caught but not surfaced to the user in the UI.
 
@@ -171,3 +193,7 @@ npm run dev
    - Filter categories: `curl "http://localhost:3000/api/sada/pois?categories=cafe,bench"`
    - Invalid lat/lng returns error: `curl "http://localhost:3000/api/sada/pois?lat=abc&lng=xyz"`
    - Unknown categories returns error: `curl "http://localhost:3000/api/sada/pois?categories=bogus"`
+9. Test the POI detail narration endpoint:
+   - Happy path: `curl -X POST http://localhost:3000/api/sada/pois/osm-930267649 -H "Content-Type: application/json" -d '{"shadow":{"currentState":"sun","sunAltitudeDeg":35},"userLocation":{"lat":45.813,"lng":15.978},"distanceMeters":200,"walkingMinutes":3}'`
+   - Invalid OSM ID: `curl -X POST http://localhost:3000/api/sada/pois/osm-abc -H "Content-Type: application/json" -d '{"shadow":{"currentState":"sun","sunAltitudeDeg":35},"distanceMeters":200,"walkingMinutes":3}'` (returns 400)
+   - Missing fields: `curl -X POST http://localhost:3000/api/sada/pois/osm-123 -H "Content-Type: application/json" -d '{"shadow":{"currentState":"sun"}}'` (returns 400)

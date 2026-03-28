@@ -30,9 +30,9 @@ The user opens the app, picks two preferences (sun or shade, and a seat type), t
 - **`lib/shadow.ts`** — Pure utility module (no React/Next.js) wrapping `suncalc` (v1.9.0). Exports `getSunState`, `getMinutesUntilStateChange`, and `getShadowMetadata`. Uses the same altitude thresholds as `MapComponent` (<=0 night, <=6 golden hour = "shade"; >6 = "sun") so client and server agree. **Actively imported by `/api/sada`** for POI shadow filtering and metadata computation.
 - **`@mapbox/polyline` (v1.2.1)** — Decodes Google Directions encoded polylines into coordinate arrays server-side. Used by `/api/sada` to return decoded route coordinates in GeoJSON `[lng, lat]` order.
 
-### Installed but NOT yet used in the main route
+### Installed and used
 - **`@turf/turf` (v7.3.4)** — geospatial operations (buffer, intersect, boolean operations on polygons). Used by `MapComponent` for shadow polygon computation and route buffering.
-- **`@google/genai` (v1.46.0)** — Google Gemini SDK. Was previously used in `/api/sada` for narration; narration is being moved to a separate endpoint.
+- **`@google/genai` (v1.46.0)** — Google Gemini SDK. Used by `/api/sada/pois/[id]` for AI narration of individual POIs.
 
 ### Environment Variables
 ```
@@ -142,6 +142,36 @@ GET endpoint that the map calls on load to populate markers with nearby points o
 
 **Shadow data is NOT included** — the client computes shadow state client-side against existing shadow polygons.
 
+### `app/api/sada/pois/[id]/route.ts` — POI Detail AI Narration
+Dynamic route POST endpoint that generates a Gemini AI description for a specific POI. The `[id]` segment is the POI's OSM ID (e.g. `osm-930267649`).
+
+**Request body:**
+```json
+{
+  "shadow": { "currentState": "sun"|"shade", "sunAltitudeDeg": 35 },
+  "userLocation": { "lat": 45.813, "lng": 15.978 },
+  "distanceMeters": 200,
+  "walkingMinutes": 3
+}
+```
+
+**Pipeline:**
+1. Validates the JSON body — returns 400 for invalid JSON, missing required fields (`shadow`, `distanceMeters`, `walkingMinutes`), or non-numeric OSM ID (prevents Overpass QL injection).
+2. Strips the `osm-` prefix and fetches the node from Overpass by numeric ID. Uses an 8-second `AbortController` timeout, checks `content-type` header before parsing (Overpass sometimes returns XML errors with 200 status), and uses `cache: "no-store"` to bypass Next.js fetch cache. Extracts `name` from `tags.name` and derives `category` via `deriveCategory()` (same logic as `/api/sada/pois/route.ts`, duplicated to avoid shared module refactor). Falls back to `name = "this spot"`, `category = "location"`.
+3. Computes Zagreb time-of-day (morning/afternoon/evening) using `Europe/Zagreb` timezone.
+4. Calls Gemini 2.0 Flash with a prompt that produces exactly 2 sentences: current sun/shade condition at the spot, and one sharp local Zagreb detail. If Gemini fails (quota, network, etc.), uses a fallback: `"${name} is catching full sun right now — ${walkingMinutes} min walk from you."` (or shade variant).
+5. Returns JSON (always 200): `{ id, description, shadow: { currentState, sunAltitudeDeg }, walkingMinutes }`.
+
+**Error handling:** Three layers of defense:
+- Input validation returns 400 with descriptive error messages before any external calls.
+- Inner try/catch blocks around Overpass and Gemini calls allow each to fail independently.
+- Outer try/catch guarantees a 200 response with fallback description is always returned.
+
+**Key implementation details:**
+- `deriveCategory()` is duplicated from `pois/route.ts` (8 lines) to keep the file self-contained.
+- `GoogleGenAI` is imported from `@google/genai` (already in `package.json`).
+- The prompt bans greetings, emojis, "perfect spot", and "great choice" — starts with a verb for a direct, commanding tone.
+
 ### `app/api/sada/route.ts` — The Backend Brain
 Single POST endpoint. Pipeline:
 
@@ -202,6 +232,7 @@ This ensures the demo never crashes.
 - [x] slideUp animation for result card
 - [x] In-app route rendering on the Mapbox map
 - [x] POI discovery GET endpoint (`/api/sada/pois`) for map marker population with category filtering and radius control
+- [x] POI detail AI narration endpoint (`/api/sada/pois/[id]`) with Gemini 2.0 Flash, Overpass lookup, input validation, and multi-layer fallbacks
 - [x] GPS-based user location with fallback
 - [x] 3D shadow polygon computation using SunCalc + Turf.js
 - [x] Time slider for simulating sun position
@@ -213,7 +244,7 @@ This ensures the demo never crashes.
 
 ### Critical for Demo
 
-1. **Narration endpoint** — AI narration (Gemini 2.0 Flash) has been removed from `/api/sada` and needs its own endpoint. The prompt, shadow metadata, and time-of-day context are ready to use. `SadaUI.tsx` still expects `narration` in the response — it renders `{result.narration}` which is currently `undefined`.
+1. **Wire narration endpoint to UI** — The narration endpoint (`/api/sada/pois/[id]`) is built and functional, but `SadaUI.tsx` does not call it yet. After getting a destination from `/api/sada`, the UI should POST to `/api/sada/pois/${destination.id}` with the shadow data, distance, and walking minutes to fetch the AI narration. `SadaUI.tsx` still expects `narration` in the result type — it renders `{result.narration}` which is currently `undefined`.
 
 2. **Wire API route coordinates to map** — `MapComponent` still uses a hardcoded `DEMO_ROUTE` array for the walking route ribbon. It should consume `route.coordinates` from the API response instead. This requires passing the route data through `app/map/page.tsx` state.
 
@@ -319,6 +350,25 @@ npm run dev                   # http://localhost:3000
 └──────────────────────────┘  │                              │
                               │  Fallback on any error        │
                               └──────────────────────────────┘
+
+POST /api/sada/pois/{osm-id}      (called after destination is chosen)
+{ shadow, distanceMeters, walkingMinutes }
+          │
+          v
+┌──────────────────────────────────┐
+│ app/api/sada/pois/[id]/route.ts  │
+│                                  │
+│ 1. Validate body + OSM ID       │
+│ 2. Overpass fetch by node ID     │
+│    (8s timeout, content-type     │
+│     guard, cache: no-store)      │
+│ 3. Zagreb time-of-day            │
+│ 4. Gemini 2.0 Flash narration    │
+│ 5. Return { id, description,    │
+│    shadow, walkingMinutes }      │
+│                                  │
+│ Fallback on any error            │
+└──────────────────────────────────┘
 ```
 
 ---
@@ -361,5 +411,6 @@ npm run dev                   # http://localhost:3000
 4. **Exclusion via client state** — Simpler than server-side session tracking. Resets on preference change, which is the right UX.
 5. **Shadow filtering server-side** — Uses `getSunState` from `lib/shadow.ts` to filter POIs by sun/shade state at the current time. Falls back gracefully if no POIs match the preference.
 6. **Server-side polyline decode** — Decoded on the server via `@mapbox/polyline` so the client receives ready-to-render `[lng, lat]` coordinate arrays without needing the decode library.
-7. **Narration as separate endpoint** — Decoupled from the main route to allow independent iteration on the AI prompt, model, and response time without blocking the core destination+route flow.
-8. **Fallback on any error** — The demo must never crash. Hardcoded fallbacks (Zrinjevac for shade, Cogito Coffee for sun) cover any API failure gracefully.
+7. **Narration as separate endpoint** — Decoupled from the main route at `/api/sada/pois/[id]`. The narration endpoint fetches POI metadata from Overpass independently and generates context-aware descriptions. This allows the UI to show the destination immediately while the narration loads asynchronously.
+8. **Fallback on any error** — The demo must never crash. The main route has hardcoded fallbacks (Zrinjevac for shade, Cogito Coffee for sun). The narration endpoint has three layers of defense: input validation (400), independent inner try/catches for Overpass and Gemini, and an outer catch that always returns a 200 with a fallback description.
+9. **Overpass QL injection prevention** — The narration endpoint validates that the OSM ID is purely numeric before interpolating it into the Overpass query, preventing injection of arbitrary query fragments.
