@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sada
 
-## Getting Started
+Every other map tells you where things are. Sada tells you where to be.
 
-First, run the development server:
+## What it does
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+You tap one button. Sada picks a real place nearby, tells you how to walk there, and explains in two sentences why that spot is worth going to right now. The recommendation accounts for actual sunlight conditions at the current time of day, not just distance or ratings.
+
+Shadow geometry is computed from Zagreb's ZG3D LiDAR dataset using SunCalc for sun angle and Turf.js for polygon projection. Each point of interest gets a shadow score based on whether its footprint is in light or shade at the moment the request is made. That score feeds directly into which result gets returned.
+
+Gemini 2.0 Flash writes a two-sentence narration for every destination. It receives the place name, category, shadow condition, time of day, and distance, and returns something specific to that place at that moment, not a generic description.
+
+![screenshot — map view with shadow polygons and destination pin]
+
+## How it works
+
+There are three main API routes. The `/api/sada/pois` endpoint fetches points of interest from the OpenStreetMap Overpass API, filters them by the requested category, and returns a ranked list with shadow scores attached. The `/api/sada/route` endpoint calls the Google Directions API to compute a walking route between two coordinates and returns the geometry as a coordinate array. The `/api/sada` endpoint is the main entry point: it orchestrates the POI fetch, scores candidates against the current shadow map, picks the best match, fetches the route, and asks Gemini for narration, all in one request.
+
+**POST /api/sada**
+
+Request:
+
+```json
+{
+  "light": "sun" | "shade",
+  "seat": "cafe" | "bench" | "viewpoint" | "fountain" | "square",
+  "userLocation": { "lat": number, "lng": number },
+  "exclude": string[]
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Response:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```json
+{
+  "destination": { "id": string, "name": string, "lat": number, "lng": number, "category": string },
+  "route": { "coordinates": [number, number][], "distanceMeters": number, "durationMinutes": number },
+  "walkingDuration": string
+}
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![screenshot — SADA button result card with narration]
 
-## Learn More
+## Stack
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js 14, App Router, TypeScript
+- Mapbox GL JS via react-map-gl
+- SunCalc and Turf.js for shadow geometry
+- ZG3D 2022 LiDAR dataset from data.zagreb.hr
+- OpenStreetMap Overpass API
+- Google Directions API
+- Google Gemini 2.0 Flash
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Running locally
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm install
+cp .env.example .env.local
+npm run dev
+```
 
-## Deploy on Vercel
+Three environment variables are required:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `NEXT_PUBLIC_MAPBOX_TOKEN` — create a public token at mapbox.com
+- `GOOGLE_MAPS_API_KEY` — Google Cloud console, Directions API must be enabled
+- `GEMINI_API_KEY` — available at aistudio.google.com
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Data
+
+The ZG3D dataset is a 2022 LiDAR survey of Zagreb published on the City of Zagreb open data portal at data.zagreb.hr. Each building record includes a `Z_Delta` value representing roof height above ground, which is used to project shadow polygons at a given sun angle. The dataset covers inner Zagreb and has been clipped to a bounding box around the city center for performance.
+
+## Built at
+
+Zagreb Hackathon, March 2026.
