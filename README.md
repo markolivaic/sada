@@ -10,7 +10,8 @@ Shadow geometry is computed from Zagreb's ZG3D LiDAR dataset using SunCalc for s
 
 Gemini 2.0 Flash writes a two-sentence narration for every destination. It receives the place name, category, shadow condition, time of day, and distance, and returns something specific to that place at that moment, not a generic description.
 
-![screenshot — map view with shadow polygons and destination pin]
+<img width="2554" height="1301" alt="image" src="https://github.com/user-attachments/assets/3148b2ad-523d-43c0-8e3d-2216a98d0fac" />
+
 
 ## How it works
 
@@ -39,7 +40,8 @@ Response:
 }
 ```
 
-![screenshot — SADA button result card with narration]
+<img width="499" height="221" alt="image" src="https://github.com/user-attachments/assets/b97f2fda-897e-4c4e-8c8c-fac459ce7b02" />
+
 
 ## Stack
 
