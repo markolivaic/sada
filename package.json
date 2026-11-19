@@ -2,19 +2,27 @@
   "name": "sada",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "smoke": "node scripts/smoke.ts",
+    "walkthrough": "next build && node scripts/walkthrough.ts",
+    "build:data": "node scripts/build-buildings.ts",
+    "fetch:places": "node scripts/fetch-places.ts"
   },
   "dependencies": {
-    "@google/genai": "^1.46.0",
-    "@mapbox/polyline": "^1.2.1",
-    "@turf/turf": "^7.3.4",
+    "flatbush": "^4.7.0",
     "lucide-react": "^1.7.0",
     "mapbox-gl": "^3.20.0",
-    "next": "16.2.1",
+    "next": "^16.4.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-map-gl": "^8.1.0",
@@ -23,15 +31,15 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/geojson": "^7946.0.16",
-    "@types/mapbox__polyline": "^1.0.5",
-    "@types/mapbox-gl": "^3.4.1",
-    "@types/node": "^20",
+    "@types/node": "^24.19.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/suncalc": "^1.9.2",
     "eslint": "^9",
-    "eslint-config-next": "16.2.1",
+    "eslint-config-next": "^16.4.6",
+    "playwright": "^1.65.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^5.1.1"
   }
 }

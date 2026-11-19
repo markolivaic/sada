@@ -1,0 +1,5 @@
+# Files whose bytes are hashed in a manifest keep their bytes on every checkout.
+data/source/*.geojson -text
+data/osm/*.json -text
+public/data/*.json -text
+public/data/*.gz binary
