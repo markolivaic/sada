@@ -1,0 +1,3927 @@
+{
+ "source": "OpenStreetMap",
+ "attribution": "© OpenStreetMap contributors",
+ "licence": "Open Database License 1.0, https://opendatacommons.org/licenses/odbl/1-0/",
+ "endpoint": "https://overpass-api.de/api/interpreter",
+ "query": "[out:json][timeout:60];(nwr[\"amenity\"=\"cafe\"](45.808,15.968,45.82,15.998);node[\"amenity\"=\"bench\"](45.808,15.968,45.82,15.998););out center tags;",
+ "fetchedOn": "2026-11-18",
+ "osmBase": "2026-11-18T18:10:21Z",
+ "counts": {
+  "cafe": 147,
+  "bench": 342
+ },
+ "places": [
+  {
+   "id": "node/10092628380",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8096581,
+   "lng": 15.9708132,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10092628381",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8096157,
+   "lng": 15.970815,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10097880292",
+   "category": "cafe",
+   "name": "Mali grad",
+   "lat": 45.8082674,
+   "lng": 15.9746076,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10101756979",
+   "category": "cafe",
+   "name": "Galerija",
+   "lat": 45.811977,
+   "lng": 15.9893841,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10116687764",
+   "category": "cafe",
+   "name": "Schlosser bar",
+   "lat": 45.8157354,
+   "lng": 15.9849919,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10163959587",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8162615,
+   "lng": 15.9696743,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10235803502",
+   "category": "cafe",
+   "name": "Stamp",
+   "lat": 45.8116246,
+   "lng": 15.9735375,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/10235819461",
+   "category": "cafe",
+   "name": "Radio Tvornica",
+   "lat": 45.8114282,
+   "lng": 15.9735329,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10269790459",
+   "category": "cafe",
+   "name": "Caffe bar Mažuranac",
+   "lat": 45.8080128,
+   "lng": 15.9690797,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10556656070",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8114261,
+   "lng": 15.9865431,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10556656071",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8113831,
+   "lng": 15.9865278,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10556656072",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8113909,
+   "lng": 15.9865816,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10616102797",
+   "category": "cafe",
+   "name": "Caffe bar Višeslav",
+   "lat": 45.8093006,
+   "lng": 15.9885447,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10616120319",
+   "category": "cafe",
+   "name": "Pharia",
+   "lat": 45.8090956,
+   "lng": 15.9882505,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10632644109",
+   "category": "cafe",
+   "name": "Roda",
+   "lat": 45.8152742,
+   "lng": 15.992912,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10658838005",
+   "category": "cafe",
+   "name": "Coffe culture",
+   "lat": 45.8081358,
+   "lng": 15.9840864,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10776053588",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8122132,
+   "lng": 15.9681657,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10776053589",
+   "category": "bench",
+   "name": null,
+   "lat": 45.812256,
+   "lng": 15.9681318,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10776173221",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8120177,
+   "lng": 15.9680896,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10776173222",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8119619,
+   "lng": 15.9680903,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10776206489",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8120067,
+   "lng": 15.9681968,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10776206490",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8120708,
+   "lng": 15.9681896,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10873181805",
+   "category": "cafe",
+   "name": "k & k",
+   "lat": 45.8125258,
+   "lng": 15.9795197,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10929430919",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8122218,
+   "lng": 15.9885548,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10929430922",
+   "category": "bench",
+   "name": null,
+   "lat": 45.812203,
+   "lng": 15.9885421,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10929430924",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8121863,
+   "lng": 15.9885504,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10945886174",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8104046,
+   "lng": 15.9812411,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10945886177",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8103211,
+   "lng": 15.9813001,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10945886193",
+   "category": "bench",
+   "name": null,
+   "lat": 45.810394,
+   "lng": 15.9812976,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/10997744032",
+   "category": "cafe",
+   "name": "Cafe & billiard bar Notturno",
+   "lat": 45.8150417,
+   "lng": 15.9976969,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11001743109",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8111301,
+   "lng": 15.9738726,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11001743110",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8111418,
+   "lng": 15.973904,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11012371643",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8198901,
+   "lng": 15.9694229,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11133405705",
+   "category": "cafe",
+   "name": "Filteraj specialty coffee & shop",
+   "lat": 45.8135348,
+   "lng": 15.9792925,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/11194041177",
+   "category": "cafe",
+   "name": "Fetiš",
+   "lat": 45.812481,
+   "lng": 15.9896796,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11194058642",
+   "category": "bench",
+   "name": null,
+   "lat": 45.812223,
+   "lng": 15.9892686,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11210567621",
+   "category": "cafe",
+   "name": "Ten22",
+   "lat": 45.8116382,
+   "lng": 15.9853643,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11235488640",
+   "category": "cafe",
+   "name": "Sunset",
+   "lat": 45.808325,
+   "lng": 15.974594,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11256176628",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8097412,
+   "lng": 15.9692856,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11293422313",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8108977,
+   "lng": 15.9734294,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11294426243",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8110988,
+   "lng": 15.9735687,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11294503521",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8111757,
+   "lng": 15.9737732,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11294504532",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8110791,
+   "lng": 15.9735011,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11294509841",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8111778,
+   "lng": 15.9737997,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11294510139",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8111177,
+   "lng": 15.973631,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11335605179",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8107202,
+   "lng": 15.9838515,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11339185221",
+   "category": "cafe",
+   "name": "Mystic",
+   "lat": 45.8136089,
+   "lng": 15.9861786,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11389728973",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8147339,
+   "lng": 15.9850139,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11389728974",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8147356,
+   "lng": 15.9850456,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11389769649",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8182066,
+   "lng": 15.9874377,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11389769650",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8182035,
+   "lng": 15.9874796,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11389769651",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8182187,
+   "lng": 15.9874806,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11389769653",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8181577,
+   "lng": 15.9874861,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11389769654",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8181587,
+   "lng": 15.9874343,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11389976358",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8182193,
+   "lng": 15.9878529,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11389976359",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8182156,
+   "lng": 15.9878956,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11389976361",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8182535,
+   "lng": 15.9878954,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11389976362",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8182557,
+   "lng": 15.9878551,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11392247537",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8132684,
+   "lng": 15.9791662,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11503695812",
+   "category": "bench",
+   "name": null,
+   "lat": 45.808449,
+   "lng": 15.9882572,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11503726501",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8083729,
+   "lng": 15.9883118,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11503744474",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8080941,
+   "lng": 15.9883423,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11503752223",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8082601,
+   "lng": 15.9863485,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11503776416",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8080172,
+   "lng": 15.9863582,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11503778955",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8081772,
+   "lng": 15.986352,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11503787069",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8083199,
+   "lng": 15.9863412,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11503787070",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8083355,
+   "lng": 15.9863397,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11503788603",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8085362,
+   "lng": 15.9866477,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11503788605",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8085705,
+   "lng": 15.9866552,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11503788606",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8085845,
+   "lng": 15.9866699,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11503788607",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8085917,
+   "lng": 15.9866899,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11554503113",
+   "category": "cafe",
+   "name": "Euro caffe",
+   "lat": 45.8104995,
+   "lng": 15.9924967,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11554542878",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8114979,
+   "lng": 15.9920415,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11554542879",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8115165,
+   "lng": 15.9921218,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11554659568",
+   "category": "cafe",
+   "name": "X2",
+   "lat": 45.8124862,
+   "lng": 15.9801236,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11597932885",
+   "category": "cafe",
+   "name": "Poolside caffe",
+   "lat": 45.8158585,
+   "lng": 15.9852435,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11634120331",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8081949,
+   "lng": 15.9976451,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11638703698",
+   "category": "cafe",
+   "name": "Mr. Šarm",
+   "lat": 45.8124787,
+   "lng": 15.9954108,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11684627429",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8171097,
+   "lng": 15.9978881,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11684627430",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8170987,
+   "lng": 15.9979466,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11684627434",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8168532,
+   "lng": 15.9979268,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11684627435",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8168145,
+   "lng": 15.9978959,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11762579205",
+   "category": "bench",
+   "name": null,
+   "lat": 45.812877,
+   "lng": 15.9961244,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11762607893",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8128561,
+   "lng": 15.9960003,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11762614601",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8128697,
+   "lng": 15.9960682,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11762614602",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8134979,
+   "lng": 15.9961697,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11762614788",
+   "category": "bench",
+   "name": null,
+   "lat": 45.812847,
+   "lng": 15.995947,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11762620331",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8135188,
+   "lng": 15.9962029,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11762620448",
+   "category": "cafe",
+   "name": "Aura",
+   "lat": 45.8132092,
+   "lng": 15.9977741,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/11822684521",
+   "category": "cafe",
+   "name": "NOHO cafe",
+   "lat": 45.812209,
+   "lng": 15.9789595,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11831272304",
+   "category": "cafe",
+   "name": "Nico's bar",
+   "lat": 45.8128465,
+   "lng": 15.9795598,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11990227216",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8193726,
+   "lng": 15.9699478,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11990227217",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8185591,
+   "lng": 15.9703302,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11990227218",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8177983,
+   "lng": 15.9710426,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11992831774",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8128045,
+   "lng": 15.9956357,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/11992831775",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8127799,
+   "lng": 15.9956688,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12075809092",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8122041,
+   "lng": 15.9889215,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12075815176",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8122156,
+   "lng": 15.9891721,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12075815368",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8122131,
+   "lng": 15.9890478,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12182533408",
+   "category": "cafe",
+   "name": "Très Chic",
+   "lat": 45.8140451,
+   "lng": 15.9929012,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12194859883",
+   "category": "cafe",
+   "name": "Caffeina bar C8H1ON402",
+   "lat": 45.814025,
+   "lng": 15.9882976,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12197395474",
+   "category": "cafe",
+   "name": "Caffe bar Vallis Aurea",
+   "lat": 45.8138919,
+   "lng": 15.9965739,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12227982903",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8151035,
+   "lng": 15.9806501,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12227984501",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8149913,
+   "lng": 15.980675,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12227984502",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8150837,
+   "lng": 15.9807254,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12227984601",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8149621,
+   "lng": 15.9806145,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12227992101",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8149773,
+   "lng": 15.9805021,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12227992201",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8149965,
+   "lng": 15.9804545,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12227992301",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8150154,
+   "lng": 15.9803938,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12288711763",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8089776,
+   "lng": 15.9953753,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12298847501",
+   "category": "cafe",
+   "name": "Sunset",
+   "lat": 45.8086159,
+   "lng": 15.9743638,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12335848418",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8098218,
+   "lng": 15.9824548,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12388046597",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8162661,
+   "lng": 15.9896468,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12388111578",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8160014,
+   "lng": 15.9897249,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12388140943",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8160041,
+   "lng": 15.9897528,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12539628424",
+   "category": "cafe",
+   "name": "Ziggy's coffee",
+   "lat": 45.8105202,
+   "lng": 15.985909,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12666679164",
+   "category": "cafe",
+   "name": "Plavo stablo",
+   "lat": 45.8082038,
+   "lng": 15.9861438,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743416979",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8080999,
+   "lng": 15.9911858,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743461744",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8083394,
+   "lng": 15.9908226,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743506151",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8082331,
+   "lng": 15.9908633,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743512256",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8082225,
+   "lng": 15.9908669,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743531895",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8084432,
+   "lng": 15.990808,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743535187",
+   "category": "bench",
+   "name": null,
+   "lat": 45.813692,
+   "lng": 15.9911861,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743539843",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8084335,
+   "lng": 15.9908066,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743552951",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8083056,
+   "lng": 15.990827,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743553173",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8137299,
+   "lng": 15.9910988,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743554037",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8082455,
+   "lng": 15.9913779,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743554038",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8083144,
+   "lng": 15.9911809,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743554039",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8080288,
+   "lng": 15.9897691,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743554427",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8081821,
+   "lng": 15.9913928,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743558805",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8083482,
+   "lng": 15.9911774,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743559020",
+   "category": "bench",
+   "name": null,
+   "lat": 45.808142,
+   "lng": 15.9911822,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12743562929",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8082238,
+   "lng": 15.9913824,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1274609816",
+   "category": "cafe",
+   "name": "Palainovka",
+   "lat": 45.8190316,
+   "lng": 15.9751814,
+   "outdoorSeating": "garden"
+  },
+  {
+   "id": "node/1274615452",
+   "category": "cafe",
+   "name": "Domus",
+   "lat": 45.8162423,
+   "lng": 15.9756575,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/12759849616",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8113588,
+   "lng": 15.9778174,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12768546706",
+   "category": "cafe",
+   "name": "Ziggy's Coffee",
+   "lat": 45.8131793,
+   "lng": 15.9694288,
+   "outdoorSeating": "no"
+  },
+  {
+   "id": "node/12798171853",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8084331,
+   "lng": 15.985939,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12798171854",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8084309,
+   "lng": 15.9858657,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12798216123",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8084134,
+   "lng": 15.9859225,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12864092625",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8168291,
+   "lng": 15.9773449,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12896239801",
+   "category": "cafe",
+   "name": "Urania Bar",
+   "lat": 45.8150873,
+   "lng": 15.9968072,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12896245801",
+   "category": "cafe",
+   "name": "Specialty coffee Zagreb",
+   "lat": 45.8114078,
+   "lng": 15.979785,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12917450969",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8174521,
+   "lng": 15.9712746,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12917457083",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8190233,
+   "lng": 15.9748892,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12917470000",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8190128,
+   "lng": 15.9750239,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12917482070",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8174701,
+   "lng": 15.9713126,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12917482504",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8189879,
+   "lng": 15.975063,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12917499986",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8174059,
+   "lng": 15.9712106,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12993823182",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8180589,
+   "lng": 15.9793115,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12993829395",
+   "category": "bench",
+   "name": null,
+   "lat": 45.817847,
+   "lng": 15.9797248,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12993829832",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8181932,
+   "lng": 15.9789337,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12993839632",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8180983,
+   "lng": 15.9792088,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12993850298",
+   "category": "bench",
+   "name": null,
+   "lat": 45.81801,
+   "lng": 15.9794017,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12993850464",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8179442,
+   "lng": 15.9795217,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/12993853856",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8178877,
+   "lng": 15.9796277,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13071207874",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146408,
+   "lng": 15.9681665,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13071207875",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146829,
+   "lng": 15.9682298,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13071207877",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8147083,
+   "lng": 15.9684388,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13082380766",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8122146,
+   "lng": 15.974567,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13108985201",
+   "category": "cafe",
+   "name": "Author's cafe Book & More",
+   "lat": 45.8092386,
+   "lng": 15.9746774,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13113085857",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8097362,
+   "lng": 15.9704795,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13116315751",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8099209,
+   "lng": 15.9693022,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13166014297",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8130373,
+   "lng": 15.9932688,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13166014706",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8130406,
+   "lng": 15.9933668,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13166025816",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8160264,
+   "lng": 15.9954923,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13166026158",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8161534,
+   "lng": 15.9954417,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13166028112",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8162752,
+   "lng": 15.9954041,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13168073779",
+   "category": "cafe",
+   "name": "Caffe Bar Kvatrić",
+   "lat": 45.8132743,
+   "lng": 15.9964681,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13190543116",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8081463,
+   "lng": 15.9706679,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13190547590",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8080742,
+   "lng": 15.9706872,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13201149061",
+   "category": "cafe",
+   "name": "Zero caffe",
+   "lat": 45.8116651,
+   "lng": 15.9743586,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13201222337",
+   "category": "cafe",
+   "name": "Cafe Cvjetni",
+   "lat": 45.8121639,
+   "lng": 15.973718,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13233206569",
+   "category": "cafe",
+   "name": "Caffe bar Prestige",
+   "lat": 45.8162079,
+   "lng": 15.9763364,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13264041694",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8083678,
+   "lng": 15.9863833,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13264072639",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8083855,
+   "lng": 15.9864213,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1326688207",
+   "category": "cafe",
+   "name": "Blato",
+   "lat": 45.8099592,
+   "lng": 15.9835212,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/13301865517",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8193842,
+   "lng": 15.9695211,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13302730932",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8196382,
+   "lng": 15.9693904,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13307243136",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8084066,
+   "lng": 15.992026,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1353774379",
+   "category": "cafe",
+   "name": "Millennium",
+   "lat": 45.8120764,
+   "lng": 15.9750217,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/13666616256",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8132769,
+   "lng": 15.9790261,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13666616257",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8132942,
+   "lng": 15.9789065,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13666623560",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8133215,
+   "lng": 15.9787098,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13695047787",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8142693,
+   "lng": 15.9719008,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1369980641",
+   "category": "cafe",
+   "name": "Boja",
+   "lat": 45.811436,
+   "lng": 15.9756709,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13723044199",
+   "category": "cafe",
+   "name": "Caffe Kumica",
+   "lat": 45.8142231,
+   "lng": 15.9777275,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/13890959801",
+   "category": "cafe",
+   "name": "Chi specialty coffee",
+   "lat": 45.8084406,
+   "lng": 15.9745628,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072351846",
+   "category": "bench",
+   "name": null,
+   "lat": 45.808104,
+   "lng": 15.9701975,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072351847",
+   "category": "bench",
+   "name": null,
+   "lat": 45.808245,
+   "lng": 15.9698269,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072356396",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8082455,
+   "lng": 15.9699729,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072362771",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8081999,
+   "lng": 15.9701978,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072375119",
+   "category": "bench",
+   "name": null,
+   "lat": 45.808017,
+   "lng": 15.9695143,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072376906",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8144004,
+   "lng": 15.972273,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072378225",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8082419,
+   "lng": 15.9698981,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072383717",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8143931,
+   "lng": 15.9722395,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072388096",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8082411,
+   "lng": 15.9697427,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072395719",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8081423,
+   "lng": 15.9701988,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072396112",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8080479,
+   "lng": 15.9702,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072396113",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8080682,
+   "lng": 15.9695084,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072399233",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8081303,
+   "lng": 15.969504,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072722370",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8102433,
+   "lng": 15.9782342,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072722371",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8104461,
+   "lng": 15.9776325,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072749050",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8109347,
+   "lng": 15.978205,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072749051",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8104144,
+   "lng": 15.9785948,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072749053",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8099661,
+   "lng": 15.9788982,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072755828",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8097263,
+   "lng": 15.9783504,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072755830",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8107832,
+   "lng": 15.977594,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072755831",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8106815,
+   "lng": 15.978698,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072756636",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8106242,
+   "lng": 15.9788208,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072761773",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8097326,
+   "lng": 15.9784421,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072761775",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8109532,
+   "lng": 15.97873,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072762071",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8105755,
+   "lng": 15.9782794,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072762073",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8106096,
+   "lng": 15.9787161,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072764655",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8096084,
+   "lng": 15.9778824,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072764657",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8110347,
+   "lng": 15.9775611,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072767731",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8107612,
+   "lng": 15.978245,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072767732",
+   "category": "bench",
+   "name": null,
+   "lat": 45.810794,
+   "lng": 15.9777029,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072771618",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8110889,
+   "lng": 15.9781835,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072771619",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8104559,
+   "lng": 15.9780498,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072771621",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8107659,
+   "lng": 15.9787754,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072771913",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8110467,
+   "lng": 15.9776761,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072778535",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8097708,
+   "lng": 15.9777533,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072778537",
+   "category": "bench",
+   "name": null,
+   "lat": 45.810465,
+   "lng": 15.9785928,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072778538",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8098782,
+   "lng": 15.9790303,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072780734",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8102757,
+   "lng": 15.9781693,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072780735",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8096864,
+   "lng": 15.9778659,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072780736",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8097985,
+   "lng": 15.9783413,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072780738",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8109532,
+   "lng": 15.977691,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072780739",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8108428,
+   "lng": 15.978663,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072780740",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8104718,
+   "lng": 15.978719,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072783403",
+   "category": "bench",
+   "name": null,
+   "lat": 45.809945,
+   "lng": 15.9777249,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072784248",
+   "category": "bench",
+   "name": null,
+   "lat": 45.81075,
+   "lng": 15.9781519,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072784249",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8110735,
+   "lng": 15.9780868,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072785311",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8102283,
+   "lng": 15.9782479,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072785312",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8101317,
+   "lng": 15.9776927,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072785314",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8104072,
+   "lng": 15.9787321,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072785315",
+   "category": "bench",
+   "name": null,
+   "lat": 45.810214,
+   "lng": 15.9788358,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072785316",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8097026,
+   "lng": 15.9789537,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072785758",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8103052,
+   "lng": 15.9778263,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072787602",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8103861,
+   "lng": 15.9778113,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072787603",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8101355,
+   "lng": 15.9788474,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072789519",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8107087,
+   "lng": 15.9776089,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072789784",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8111371,
+   "lng": 15.9786839,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072789923",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8101267,
+   "lng": 15.9778101,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072789924",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8098855,
+   "lng": 15.9784143,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072789925",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8111199,
+   "lng": 15.9786083,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072790685",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8109207,
+   "lng": 15.9781165,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072790687",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8102408,
+   "lng": 15.9783749,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072790688",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8106383,
+   "lng": 15.9777268,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072790690",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8110264,
+   "lng": 15.9786319,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072791791",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8104037,
+   "lng": 15.9779378,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072791793",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8105437,
+   "lng": 15.9777441,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072791795",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8102045,
+   "lng": 15.9789484,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072797533",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8103249,
+   "lng": 15.9779541,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072801501",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8100347,
+   "lng": 15.9778256,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072801503",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8098069,
+   "lng": 15.9784232,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072801506",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8100546,
+   "lng": 15.9789862,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/14072801507",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8097884,
+   "lng": 15.9789306,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1489476575",
+   "category": "cafe",
+   "name": "Vergl",
+   "lat": 45.8162214,
+   "lng": 15.9772418,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1514141529",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8091809,
+   "lng": 15.9695794,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1514141544",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8092847,
+   "lng": 15.9695754,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1514141548",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8093567,
+   "lng": 15.9695727,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1514141551",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8094461,
+   "lng": 15.9695693,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1514141570",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8095427,
+   "lng": 15.9695656,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1514141571",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8096289,
+   "lng": 15.9695623,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1514371286",
+   "category": "cafe",
+   "name": "Cafe Cajt",
+   "lat": 45.8136148,
+   "lng": 15.987156,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1879874539",
+   "category": "cafe",
+   "name": "Šalata",
+   "lat": 45.819839,
+   "lng": 15.9839678,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1907014336",
+   "category": "cafe",
+   "name": "Buzz",
+   "lat": 45.8088232,
+   "lng": 15.974525,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/1960097621",
+   "category": "cafe",
+   "name": "Kavana Dubrovnik",
+   "lat": 45.8127714,
+   "lng": 15.9765936,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/1962380418",
+   "category": "cafe",
+   "name": "Thalia",
+   "lat": 45.8110727,
+   "lng": 15.9763049,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1963215027",
+   "category": "cafe",
+   "name": "Alcatraz",
+   "lat": 45.8106239,
+   "lng": 15.9741993,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1969688806",
+   "category": "cafe",
+   "name": "Zug",
+   "lat": 45.8127253,
+   "lng": 15.9843768,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/1990298651",
+   "category": "cafe",
+   "name": "Animal cafe",
+   "lat": 45.8106496,
+   "lng": 15.9943515,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2116119506",
+   "category": "cafe",
+   "name": "Remy",
+   "lat": 45.8120588,
+   "lng": 15.9876149,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/2157222976",
+   "category": "cafe",
+   "name": "Pentagon",
+   "lat": 45.8175976,
+   "lng": 15.9964942,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2188577432",
+   "category": "cafe",
+   "name": "X2",
+   "lat": 45.8086215,
+   "lng": 15.9723982,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2204477796",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8082353,
+   "lng": 15.9696625,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2235034858",
+   "category": "cafe",
+   "name": "Centar",
+   "lat": 45.8092789,
+   "lng": 15.9802315,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/2260438109",
+   "category": "cafe",
+   "name": "Slastičarnica Vincek",
+   "lat": 45.8147466,
+   "lng": 15.997036,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2280485347",
+   "category": "cafe",
+   "name": "cafe bar Komedija",
+   "lat": 45.8161336,
+   "lng": 15.9783053,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2280711790",
+   "category": "cafe",
+   "name": "Amelie",
+   "lat": 45.8137781,
+   "lng": 15.9789595,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2280726149",
+   "category": "cafe",
+   "name": "Caffe bar Ceker",
+   "lat": 45.8138314,
+   "lng": 15.9772463,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2280738090",
+   "category": "cafe",
+   "name": "Argentina",
+   "lat": 45.8140669,
+   "lng": 15.976154,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2280757435",
+   "category": "cafe",
+   "name": "Ramazzoti",
+   "lat": 45.8187433,
+   "lng": 15.9765673,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2283207604",
+   "category": "cafe",
+   "name": "Berka",
+   "lat": 45.8104814,
+   "lng": 15.9751391,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2283221545",
+   "category": "cafe",
+   "name": "Bistro Oranž",
+   "lat": 45.8129206,
+   "lng": 15.9743225,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2283240502",
+   "category": "cafe",
+   "name": "Basement",
+   "lat": 45.8138885,
+   "lng": 15.9730402,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2291958965",
+   "category": "cafe",
+   "name": "Caffe bar Dolac",
+   "lat": 45.8137435,
+   "lng": 15.9777555,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2291958968",
+   "category": "cafe",
+   "name": "Enigma",
+   "lat": 45.8153137,
+   "lng": 15.9763689,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2295729492",
+   "category": "cafe",
+   "name": "Rock Star Caffe Bar",
+   "lat": 45.809449,
+   "lng": 15.974415,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2297325784",
+   "category": "cafe",
+   "name": "Požuri Polako",
+   "lat": 45.8145157,
+   "lng": 15.9964185,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/2313175760",
+   "category": "cafe",
+   "name": "Ziggy's Coffee",
+   "lat": 45.8140541,
+   "lng": 15.997462,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2340722345",
+   "category": "cafe",
+   "name": "Caffe bar Srce",
+   "lat": 45.8108164,
+   "lng": 15.9800597,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2366030622",
+   "category": "cafe",
+   "name": "Magnum",
+   "lat": 45.8082061,
+   "lng": 15.9806628,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2379302193",
+   "category": "cafe",
+   "name": "Cafe Buba",
+   "lat": 45.8080065,
+   "lng": 15.9753391,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2379321727",
+   "category": "cafe",
+   "name": "Gundulić",
+   "lat": 45.8127072,
+   "lng": 15.9719525,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2716037798",
+   "category": "cafe",
+   "name": "Žirafa",
+   "lat": 45.8115048,
+   "lng": 15.9722972,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2779083163",
+   "category": "bench",
+   "name": "Antun Gustav Matoš",
+   "lat": 45.8142782,
+   "lng": 15.9741197,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/2969297481",
+   "category": "cafe",
+   "name": "Kraš choco&café",
+   "lat": 45.8134081,
+   "lng": 15.9770985,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/3016269203",
+   "category": "cafe",
+   "name": "Kino Europa",
+   "lat": 45.8116846,
+   "lng": 15.9729791,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/3092889070",
+   "category": "cafe",
+   "name": "Pekarnica Bekeraj",
+   "lat": 45.8114105,
+   "lng": 15.997337,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/3092889071",
+   "category": "cafe",
+   "name": "Meus",
+   "lat": 45.8115713,
+   "lng": 15.9972726,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/3191377115",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8177507,
+   "lng": 15.9712312,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/337966672",
+   "category": "cafe",
+   "name": "Laterna",
+   "lat": 45.814905,
+   "lng": 15.9956259,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/3458067795",
+   "category": "cafe",
+   "name": "Supercaffé",
+   "lat": 45.812823,
+   "lng": 15.9739413,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/3730741064",
+   "category": "cafe",
+   "name": "Caffe bar Sunce",
+   "lat": 45.8143472,
+   "lng": 15.97688,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/3884704259",
+   "category": "cafe",
+   "name": "Park Inn",
+   "lat": 45.8167061,
+   "lng": 15.9975673,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/3992219657",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8192461,
+   "lng": 15.9694529,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/3992219658",
+   "category": "bench",
+   "name": null,
+   "lat": 45.818868,
+   "lng": 15.9695175,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/4104545634",
+   "category": "cafe",
+   "name": "Cogito coffee",
+   "lat": 45.8116633,
+   "lng": 15.9725353,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/4104546689",
+   "category": "cafe",
+   "name": "Galerija Lav",
+   "lat": 45.8158411,
+   "lng": 15.9749222,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/4146530806",
+   "category": "cafe",
+   "name": "La Mar café",
+   "lat": 45.8140641,
+   "lng": 15.9968075,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/4406925892",
+   "category": "cafe",
+   "name": "b 041",
+   "lat": 45.8102064,
+   "lng": 15.9712395,
+   "outdoorSeating": "parklet"
+  },
+  {
+   "id": "node/4459296689",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8157162,
+   "lng": 15.9807859,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/4470057664",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8192745,
+   "lng": 15.9738814,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/4470057666",
+   "category": "cafe",
+   "name": "Verdi",
+   "lat": 45.8125746,
+   "lng": 15.9719283,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/4680105173",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8119644,
+   "lng": 15.9736788,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/4848169491",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8090173,
+   "lng": 15.9952357,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/4970298233",
+   "category": "cafe",
+   "name": "Neka Jedu Kolace",
+   "lat": 45.8151545,
+   "lng": 15.9931334,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/4970298236",
+   "category": "cafe",
+   "name": "Vanilla",
+   "lat": 45.8123299,
+   "lng": 15.9860727,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/4987844137",
+   "category": "cafe",
+   "name": "Caffe Petit 2",
+   "lat": 45.8132463,
+   "lng": 15.985114,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/4993597838",
+   "category": "cafe",
+   "name": "Bonita",
+   "lat": 45.8123671,
+   "lng": 15.974467,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/5020620039",
+   "category": "cafe",
+   "name": "Bugatti",
+   "lat": 45.81241,
+   "lng": 15.9956906,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/5020620041",
+   "category": "cafe",
+   "name": "Marty",
+   "lat": 45.8122363,
+   "lng": 15.9958396,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/5020620042",
+   "category": "cafe",
+   "name": "Gapa",
+   "lat": 45.8122118,
+   "lng": 15.99585,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/5020620044",
+   "category": "cafe",
+   "name": "Polo",
+   "lat": 45.8116844,
+   "lng": 15.9960253,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/5021776111",
+   "category": "cafe",
+   "name": "Pan-pek",
+   "lat": 45.8129427,
+   "lng": 15.9756171,
+   "outdoorSeating": "no"
+  },
+  {
+   "id": "node/5153828826",
+   "category": "cafe",
+   "name": "Quahwa",
+   "lat": 45.8109402,
+   "lng": 15.9754986,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/5179567922",
+   "category": "cafe",
+   "name": null,
+   "lat": 45.8139835,
+   "lng": 15.9826343,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/5181608521",
+   "category": "cafe",
+   "name": "Roses & Coffee",
+   "lat": 45.8136102,
+   "lng": 15.9851114,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/5183937023",
+   "category": "cafe",
+   "name": "Caffe Bar Safari",
+   "lat": 45.813602,
+   "lng": 15.985793,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/5183946821",
+   "category": "cafe",
+   "name": "La Cubanita",
+   "lat": 45.8136342,
+   "lng": 15.9842527,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/5188229621",
+   "category": "cafe",
+   "name": null,
+   "lat": 45.8136085,
+   "lng": 15.9850626,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/5188769724",
+   "category": "cafe",
+   "name": "Caffe More",
+   "lat": 45.8127743,
+   "lng": 15.9851755,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/552444561",
+   "category": "cafe",
+   "name": "Zvonimir",
+   "lat": 45.8146806,
+   "lng": 15.9941791,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/5674536688",
+   "category": "cafe",
+   "name": "Bistro Crta",
+   "lat": 45.8153146,
+   "lng": 15.9851657,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/5826882265",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8148835,
+   "lng": 15.9792707,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6055956943",
+   "category": "cafe",
+   "name": "Alfresco",
+   "lat": 45.8122657,
+   "lng": 15.9841718,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/6055967499",
+   "category": "cafe",
+   "name": "Fine torte",
+   "lat": 45.8139054,
+   "lng": 15.9816555,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/6055971860",
+   "category": "cafe",
+   "name": "Good food",
+   "lat": 45.8132499,
+   "lng": 15.9814094,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6180789461",
+   "category": "cafe",
+   "name": "Cato taqueria",
+   "lat": 45.8134672,
+   "lng": 15.9903341,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6224917836",
+   "category": "cafe",
+   "name": "Eggspress",
+   "lat": 45.8145029,
+   "lng": 15.98871,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6224990527",
+   "category": "cafe",
+   "name": "Petrus",
+   "lat": 45.8140247,
+   "lng": 15.9914174,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6253968382",
+   "category": "bench",
+   "name": null,
+   "lat": 45.810642,
+   "lng": 15.9937819,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6253968383",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8106905,
+   "lng": 15.9939225,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6253968384",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8107512,
+   "lng": 15.9938867,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6253969185",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8107276,
+   "lng": 15.9940058,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6253969187",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8106341,
+   "lng": 15.9939318,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6253969188",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8107425,
+   "lng": 15.9939714,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6253969189",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8107837,
+   "lng": 15.99392,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6253969190",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8106032,
+   "lng": 15.9938259,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6253969191",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8107084,
+   "lng": 15.9938235,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6253969192",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8107799,
+   "lng": 15.9939814,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6253969193",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8107141,
+   "lng": 15.9938698,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6257818027",
+   "category": "cafe",
+   "name": "Leptir",
+   "lat": 45.8114459,
+   "lng": 15.9850429,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/633418902",
+   "category": "cafe",
+   "name": "Superiore",
+   "lat": 45.8082343,
+   "lng": 15.9922753,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6373598885",
+   "category": "cafe",
+   "name": "Muzej prekinutih veza kafić",
+   "lat": 45.8149417,
+   "lng": 15.973571,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6486654590",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8095729,
+   "lng": 15.9704908,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6486654591",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8096592,
+   "lng": 15.9704875,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6486654592",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8093037,
+   "lng": 15.970502,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6486654593",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8092112,
+   "lng": 15.9705046,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6486654594",
+   "category": "bench",
+   "name": null,
+   "lat": 45.809387,
+   "lng": 15.9704979,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6486654595",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8094763,
+   "lng": 15.9704945,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6513309733",
+   "category": "cafe",
+   "name": "grif",
+   "lat": 45.8121627,
+   "lng": 15.9756626,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6721247885",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8145719,
+   "lng": 15.9713313,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6727520264",
+   "category": "cafe",
+   "name": "Monocycle specialty coffee",
+   "lat": 45.8094418,
+   "lng": 15.986221,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/6887308326",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8148683,
+   "lng": 15.9791563,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6887308327",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8148958,
+   "lng": 15.9790808,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6887308328",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8148339,
+   "lng": 15.9790714,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6887308329",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8147699,
+   "lng": 15.9791985,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/6887308330",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8147783,
+   "lng": 15.9791033,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/7295000149",
+   "category": "cafe",
+   "name": "Kavkaz",
+   "lat": 45.8100987,
+   "lng": 15.9710118,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/7610347448",
+   "category": "cafe",
+   "name": "Orient Express",
+   "lat": 45.8113932,
+   "lng": 15.9755909,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/761956667",
+   "category": "cafe",
+   "name": "Pret",
+   "lat": 45.8085477,
+   "lng": 15.9960767,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/761956668",
+   "category": "cafe",
+   "name": "Plavi klub",
+   "lat": 45.8102791,
+   "lng": 15.9978492,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/7839352472",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8119895,
+   "lng": 15.9967319,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/7839352473",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8119651,
+   "lng": 15.9967752,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/7839352474",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8119425,
+   "lng": 15.9968128,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/7839352475",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8118311,
+   "lng": 15.9965403,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/7839352476",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8117951,
+   "lng": 15.9965193,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/7839352477",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8118706,
+   "lng": 15.9969516,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/7839352478",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8117552,
+   "lng": 15.9969351,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/7967758145",
+   "category": "cafe",
+   "name": "Charlie",
+   "lat": 45.8118815,
+   "lng": 15.976245,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/7990260758",
+   "category": "cafe",
+   "name": "Cosmopolitan",
+   "lat": 45.8119843,
+   "lng": 15.976192,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8050349412",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8144528,
+   "lng": 15.9899194,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8050349414",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8144731,
+   "lng": 15.9897439,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8050349420",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8144073,
+   "lng": 15.9897298,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8077996219",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8093582,
+   "lng": 15.9692977,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8077996220",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8092767,
+   "lng": 15.9693003,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8077996221",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8091917,
+   "lng": 15.9693038,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8077996222",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8094416,
+   "lng": 15.9692941,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8077996223",
+   "category": "bench",
+   "name": null,
+   "lat": 45.809529,
+   "lng": 15.9692918,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8077996224",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8096218,
+   "lng": 15.9692901,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8116724730",
+   "category": "cafe",
+   "name": "Virtuoz",
+   "lat": 45.8087028,
+   "lng": 15.9850999,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902797",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146096,
+   "lng": 15.9713491,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902798",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146917,
+   "lng": 15.9714093,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902799",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146315,
+   "lng": 15.9714268,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902800",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146572,
+   "lng": 15.9714653,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902801",
+   "category": "bench",
+   "name": null,
+   "lat": 45.814699,
+   "lng": 15.9716777,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902802",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8145817,
+   "lng": 15.9716877,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902803",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8145869,
+   "lng": 15.9717709,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902805",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8145939,
+   "lng": 15.9715824,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902806",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8145663,
+   "lng": 15.971567,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902807",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8145247,
+   "lng": 15.9715704,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902808",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8144812,
+   "lng": 15.9716024,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902809",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8144737,
+   "lng": 15.9716772,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902810",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8144801,
+   "lng": 15.9717273,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902811",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8144919,
+   "lng": 15.9717866,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902812",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8145257,
+   "lng": 15.9718452,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902813",
+   "category": "bench",
+   "name": null,
+   "lat": 45.814559,
+   "lng": 15.9718482,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902815",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146412,
+   "lng": 15.9718452,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902816",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146691,
+   "lng": 15.9718567,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902817",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8147544,
+   "lng": 15.9718891,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902818",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8147813,
+   "lng": 15.9718775,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902820",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8148344,
+   "lng": 15.9717096,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902822",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146402,
+   "lng": 15.9720495,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902823",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146195,
+   "lng": 15.9721044,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902824",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146199,
+   "lng": 15.9721499,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902825",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8147428,
+   "lng": 15.97207,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902826",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8147415,
+   "lng": 15.9721079,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902827",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8147599,
+   "lng": 15.9719789,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902828",
+   "category": "bench",
+   "name": null,
+   "lat": 45.814783,
+   "lng": 15.9719812,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902829",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8148038,
+   "lng": 15.9719824,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902831",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8148787,
+   "lng": 15.9718849,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902832",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8148754,
+   "lng": 15.9719176,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902833",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8149185,
+   "lng": 15.971833,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8129902834",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8149145,
+   "lng": 15.9716748,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8212564761",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8133648,
+   "lng": 15.9840131,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8212564763",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8133276,
+   "lng": 15.9842615,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8212564764",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8132794,
+   "lng": 15.9841086,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8212564765",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8132453,
+   "lng": 15.9841102,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8212564767",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8132568,
+   "lng": 15.9842157,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8212564768",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8131921,
+   "lng": 15.984197,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8212564770",
+   "category": "bench",
+   "name": null,
+   "lat": 45.813116,
+   "lng": 15.9842548,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8212564771",
+   "category": "bench",
+   "name": null,
+   "lat": 45.81309,
+   "lng": 15.9841293,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8212564772",
+   "category": "bench",
+   "name": null,
+   "lat": 45.813149,
+   "lng": 15.9840189,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8240316170",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8083996,
+   "lng": 15.9784099,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8240316171",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8084013,
+   "lng": 15.9784596,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8240316172",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8084029,
+   "lng": 15.9785086,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8240316173",
+   "category": "bench",
+   "name": null,
+   "lat": 45.808411,
+   "lng": 15.9787574,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8240316174",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8084095,
+   "lng": 15.9787127,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8240316175",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8084083,
+   "lng": 15.9786747,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8240316183",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8082274,
+   "lng": 15.9791207,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8240316184",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8080768,
+   "lng": 15.9791283,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8240316185",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8080115,
+   "lng": 15.9791312,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8280823213",
+   "category": "cafe",
+   "name": "Legend Riders",
+   "lat": 45.8114499,
+   "lng": 15.9964059,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8926648143",
+   "category": "cafe",
+   "name": "Galerija",
+   "lat": 45.8186681,
+   "lng": 15.9786109,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/8935254717",
+   "category": "cafe",
+   "name": null,
+   "lat": 45.8104765,
+   "lng": 15.9771469,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9053097433",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8113913,
+   "lng": 15.9783668,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9053097434",
+   "category": "bench",
+   "name": null,
+   "lat": 45.811332,
+   "lng": 15.9784398,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9053097435",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8113181,
+   "lng": 15.9783092,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9053097436",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8112392,
+   "lng": 15.9779744,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9065856286",
+   "category": "cafe",
+   "name": "Broom44",
+   "lat": 45.813977,
+   "lng": 15.977623,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/9144883646",
+   "category": "cafe",
+   "name": "Street cafe",
+   "lat": 45.8111938,
+   "lng": 15.9911714,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9288130046",
+   "category": "cafe",
+   "name": "Kolding",
+   "lat": 45.8105406,
+   "lng": 15.9758114,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9330052266",
+   "category": "cafe",
+   "name": "Pinup",
+   "lat": 45.8097707,
+   "lng": 15.9743461,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/954667893",
+   "category": "cafe",
+   "name": "Narcissus",
+   "lat": 45.8147593,
+   "lng": 15.9695643,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9554592467",
+   "category": "cafe",
+   "name": "A'e",
+   "lat": 45.8169662,
+   "lng": 15.9758253,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/9571012062",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8096892,
+   "lng": 15.9810609,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9571023115",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8095402,
+   "lng": 15.9788044,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9571055173",
+   "category": "bench",
+   "name": null,
+   "lat": 45.809486,
+   "lng": 15.9781049,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/963507985",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8171036,
+   "lng": 15.9978433,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9654028688",
+   "category": "cafe",
+   "name": "Tin",
+   "lat": 45.810439,
+   "lng": 15.9723299,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9657706445",
+   "category": "cafe",
+   "name": "Simpa",
+   "lat": 45.8140827,
+   "lng": 15.9776465,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/9657712529",
+   "category": "cafe",
+   "name": "Opatovina",
+   "lat": 45.8141208,
+   "lng": 15.9776611,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/9657715318",
+   "category": "cafe",
+   "name": "Zagorka",
+   "lat": 45.8140482,
+   "lng": 15.9776357,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/973778135",
+   "category": "cafe",
+   "name": "Lokal",
+   "lat": 45.8155914,
+   "lng": 15.9692545,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9895532056",
+   "category": "cafe",
+   "name": "Grey Caffe bar",
+   "lat": 45.8084779,
+   "lng": 15.9720524,
+   "outdoorSeating": "yes"
+  },
+  {
+   "id": "node/9895648381",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146443,
+   "lng": 15.9727581,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9895648384",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146547,
+   "lng": 15.973013,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9895648385",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146443,
+   "lng": 15.9730136,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9895648388",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146529,
+   "lng": 15.9730454,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9895648389",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146395,
+   "lng": 15.9730834,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9895648390",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146425,
+   "lng": 15.973046,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9895648391",
+   "category": "bench",
+   "name": null,
+   "lat": 45.814646,
+   "lng": 15.9728182,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9895648392",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8147699,
+   "lng": 15.9730845,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9895648395",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8147543,
+   "lng": 15.9730999,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9895648397",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146398,
+   "lng": 15.9731185,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9895648398",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146502,
+   "lng": 15.9731179,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9895648399",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8146499,
+   "lng": 15.9730828,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9907707802",
+   "category": "cafe",
+   "name": "Ferdinand Knedle",
+   "lat": 45.8150016,
+   "lng": 15.9755613,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/990945781",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8164502,
+   "lng": 15.9866059,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9930008938",
+   "category": "bench",
+   "name": null,
+   "lat": 45.8128758,
+   "lng": 15.9767951,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9947803874",
+   "category": "cafe",
+   "name": "Hi Chai",
+   "lat": 45.8137591,
+   "lng": 15.9784906,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9968656620",
+   "category": "cafe",
+   "name": "Kata Brunch Bar",
+   "lat": 45.8103229,
+   "lng": 15.980131,
+   "outdoorSeating": null
+  },
+  {
+   "id": "node/9971788059",
+   "category": "cafe",
+   "name": "Kata Brunch Bar",
+   "lat": 45.8123437,
+   "lng": 15.986274,
+   "outdoorSeating": null
+  },
+  {
+   "id": "way/1242229611",
+   "category": "cafe",
+   "name": "Braća Radić",
+   "lat": 45.8191759,
+   "lng": 15.9837075,
+   "outdoorSeating": null
+  },
+  {
+   "id": "way/338686824",
+   "category": "cafe",
+   "name": "Slastičarnica Vincek",
+   "lat": 45.8132762,
+   "lng": 15.9733365,
+   "outdoorSeating": null
+  }
+ ]
+}

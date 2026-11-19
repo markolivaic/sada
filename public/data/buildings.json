@@ -1,0 +1,88 @@
+{
+  "source": {
+    "file": "data/source/zg3d_buildings.geojson",
+    "bytes": 6859333,
+    "sha256": "ad56d286e06ca88e49af8cbcd6605a4961b8cbed62e98cb17135a85ad92bc574",
+    "dataset": "ZG3D 2022 3D model Grada Zagreba",
+    "publisher": "Grad Zagreb",
+    "url": "https://data.zagreb.hr/dataset/zg3d-2022-3d-model-gz",
+    "licence": "Otvorena dozvola (Open Licence), http://data.gov.hr/otvorena-dozvola",
+    "features": 8735,
+    "blockOutlines": [
+      106994,
+      107713,
+      108145
+    ],
+    "surveys": {
+      "2008 aerofotogrametrijsko snimanje": 6452,
+      "2022 Multisenzorsko snimanje": 2280
+    }
+  },
+  "box": {
+    "west": 15.968,
+    "south": 45.808,
+    "east": 15.998,
+    "north": 45.82
+  },
+  "origin": {
+    "lng": 15.983,
+    "lat": 45.814
+  },
+  "ground": {
+    "method": "plane through the bases of neighbours within 60 m; a base more than 3 m off the plane is replaced by it",
+    "kept": 7961,
+    "replacedAbove": 501,
+    "replacedBelow": 270,
+    "tooFewNeighbours": 78
+  },
+  "heightAboveGroundM": {
+    "median": 11.1,
+    "p95": 24.2,
+    "p99": 30.2,
+    "max": 103.5,
+    "notAboveGround": 55
+  },
+  "bundle": {
+    "file": "public/data/buildings.bin.gz",
+    "sha256Unpacked": "60bf4edd77227f06d08764ead998fddb4a2a3c831d7b8139bd9b6f57fa305dc8",
+    "droppedBuildings": 0,
+    "bytes": 583460,
+    "buildings": 8732,
+    "rings": 8960,
+    "vertices": 119439,
+    "xyStepM": 0.05,
+    "zStepM": 0.01,
+    "buffers": {
+      "buildingRingStart": {
+        "offset": 0,
+        "length": 34932,
+        "dtype": "uint32",
+        "count": 8733
+      },
+      "ringStart": {
+        "offset": 34932,
+        "length": 35844,
+        "dtype": "uint32",
+        "count": 8961
+      },
+      "xyDelta": {
+        "offset": 70776,
+        "length": 477756,
+        "dtype": "int16",
+        "count": 238878
+      },
+      "top": {
+        "offset": 548532,
+        "length": 17464,
+        "dtype": "uint16",
+        "count": 8732
+      },
+      "ground": {
+        "offset": 565996,
+        "length": 17464,
+        "dtype": "uint16",
+        "count": 8732
+      }
+    }
+  }
+}
