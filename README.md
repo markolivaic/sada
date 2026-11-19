@@ -12,10 +12,9 @@ the main square. The walking routes in it are answers the routing service gave o
 `scripts/walkthrough-routes.json`. `npm run walkthrough` makes it again.
 
 Sun and shade are worked out from the city's 3D building model and the position of the sun.
-Nothing else casts a shadow here. Trees, awnings, parasols and clouds do not exist for this
-app, so a bench under a plane tree in a park reads as sun. It covers a box of about 2.3 by
-1.3 km around the main square, with 8,732 buildings, 147 cafés and 342 benches. Outside
-that box it gives no answer.
+Only buildings cast shadows here: trees, awnings and clouds are not in the model, so a bench
+under a plane tree reads as sun. It covers a box of about 2.3 by 1.3 km around the main
+square, with 8,732 buildings, 147 cafés and 342 benches.
 
 ## What you get
 
@@ -59,35 +58,26 @@ onto free ground.
 This is an assumption. Where the tables really stand is not mapped, and the app says so
 under every pick it applies to.
 
-## What it gets wrong
+## What the model assumes
 
-- **Roofs are flat blocks at their highest point.** A pitched roof casts a slightly longer
-  shadow here than in the street, and a church is as tall as its spire over its whole
-  footprint.
-- **There is no terrain model.** Ground level is taken from the base of each building's 3D
-  solid and checked against a plane through its neighbours' bases. For 771 of the 8,732
-  buildings the base was more than 3 m off and was replaced by the plane. 55 buildings end
-  up no higher than the ground around them and cast nothing.
-- **Most of the model is old.** 6,452 buildings (74%) come from a 2008 aerial survey and
-  2,280 from a 2022 survey. Anything built or pulled down since is wrong.
-- **3 records in the source outline whole blocks.** They have no 3D solid, and each
-  holds about a hundred buildings that are in the data on their own. They are left out;
-  kept, each would stand as one block over every street and courtyard inside it.
-- **The map is flat and its shadows are not the tested part.** Blocks stand on a level
-  plane at their height above their own ground, and the graphics card casts their shadows.
-  The answer uses the ground level at the seat. On the slope of the upper town a drawn
-  shadow can end a few metres from where the answer changes. The tests cover the answers.
-- **Low sun near the edge of the box is left open.** If no mapped building blocks the sun
-  but the box ends before a 30 m building beyond it could be ruled out, the place shows as
-  "sun too low to tell" and is never picked.
-- **One sun for the whole box.** Its position is taken at the centre, without atmospheric
-  refraction. Across the box it differs by less than 0.05 degrees.
-- **The places are a snapshot** of OpenStreetMap from 2026-11-18. A café that closed since
-  is still listed, and opening hours are not looked at.
-- **Without a walking route** the app shows the straight-line distance and says that it is
-  straight-line.
-- **Browsers from before 2023** may lack `DecompressionStream`, which unpacks the
-  buildings. There the app says the buildings did not load.
+- **Flat roofs.** Each building is a block up to its highest point, so a pitched roof or a
+  spire throws a slightly longer shadow than the real one.
+- **Ground from the buildings.** Ground level comes from the bases of the 3D solids, checked
+  against a plane through each building's neighbours; for 771 of the 8,732 buildings the
+  plane is used instead. 55 buildings end up no higher than the ground around them.
+- **The city as surveyed.** 6,452 buildings (74%) come from a 2008 aerial survey and 2,280
+  from a 2022 survey. 3 records in the source outline whole blocks rather than buildings,
+  and are left out.
+- **The edge of the map.** A low sun near the edge could be blocked by a building outside
+  the box. Where the box ends before a 30 m building could be ruled out, a place shows as
+  "sun too low to tell" and is not picked.
+- **One sun for the box,** taken at its centre. Across the box it differs by less than
+  0.05 degrees.
+- **Places as of one day.** The cafés and benches are an OpenStreetMap snapshot from
+  2026-11-18.
+- **Two kinds of shadow.** The answers come from the tested geometry. The shadows on the map
+  are drawn by the graphics card on level ground, so on the slope of the upper town they can
+  end a few metres from where the answer changes.
 
 ## Run it
 

@@ -24,13 +24,13 @@ it("the README's numbers are the ones in the data", () => {
     `for at least ${MIN_STAY_MINUTES} minutes`,
     `a point ${SEAT_OFFSET_M} m outside the nearest wall`,
     `Of the ${snapshot.counts.cafe} cafés, ${cafes.filter((p) => p.moved).length} are moved this way and ${withoutSeat} are left out`,
-    `For ${manifest.ground.replacedAbove + manifest.ground.replacedBelow} of the ${count(manifest.bundle.buildings)} buildings`,
+    `for ${manifest.ground.replacedAbove + manifest.ground.replacedBelow} of the ${count(manifest.bundle.buildings)} buildings`,
     `${manifest.heightAboveGroundM.notAboveGround} buildings end up no higher`,
     `${count(older[1])} buildings (${Math.round((100 * older[1]) / manifest.bundle.buildings)}%) come from a ${older[0].slice(0, 4)} aerial survey`,
     `${manifest.source.blockOutlines.length} records in the source outline whole blocks`,
     `${count(newer[1])} from a ${newer[0].slice(0, 4)} survey`,
     `before a ${EDGE_HEIGHT_M} m building`,
-    `OpenStreetMap from ${snapshot.osmBase.slice(0, 10)}`,
+    `OpenStreetMap snapshot from ${snapshot.osmBase.slice(0, 10)}`,
     `bundle is ${Math.round(manifest.bundle.bytes / 1000)} kB, and ${Math.round(statSync(manifest.bundle.file).size / 1000)} kB as it is sent`,
   ];
   expect(stated.filter((text) => !readme.includes(text))).toEqual([]);
